@@ -18,6 +18,11 @@ namespace Application
                 config.RegisterServicesFromAssemblyContaining<ApplicationAssemblyReference>();
             });
 
+            services.AddScoped(
+                typeof(IPipelineBehavior<,>)
+                );
+
+            services.AddValidatorsFromAssemblyContaining<ApplicationAssemblyReference>();
             return services;
 
         }
