@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using ErrorOr;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,6 @@ namespace Application.Customers.Create
         string City,
         string State,
         string ZipCode
-    ): IRequest<Unit>;
+    ): IRequest<ErrorOr<Unit>>;
 
 }
