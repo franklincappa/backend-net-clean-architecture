@@ -1,4 +1,5 @@
 ﻿using Application;
+using Application.Common.Behaviors;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,8 +20,9 @@ namespace Application
             });
 
             services.AddScoped(
-                typeof(IPipelineBehavior<,>)
-                );
+                typeof(IPipelineBehavior<,>),
+                typeof(ValidationBehavior<,>)
+            );
 
             services.AddValidatorsFromAssemblyContaining<ApplicationAssemblyReference>();
             return services;
